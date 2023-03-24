@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+<div class="modal-lesson__flow" hidden>
+    <div class="modal__window">
+        <div class="modal__close">x</div>
+    </div>
+</div>
+<div class="intro">
+    <div class="intro__container">
+        <div class="intro__school">
+            <p class="school__name">Бердигестяхская улусная гимназия имени В.В. Филиппова</p>
+        </div>
+    </div>
+</div>
+<div class="news">
+    <div class="news__container">
+        <p class="title" id="news" style="--size: 30px">Что нового?</p>
+        <div class="news__list">
+            <div class="news__inner">
+                <article class="news__article">
+                    <p class="title">Гимназия теперь будет в честь В. В. Филиппова</p>
+                    <p class="description">Вышел новый указ...</p>
+                </article>
+                <article class="news__article">
+                    <p class="title">Гимназия теперь будет в честь В. В. Филиппова</p>
+                    <p class="description">Вышел новый указ...</p>
+                </article>
+                <article class="news__article">
+                    <p class="title">Гимназия теперь будет в честь В. В. Филиппова</p>
+                    <p class="description">Вышел новый указ...</p>
+                </article>
+                <article class="news__article">
+                    <p class="title">Гимназия теперь будет в честь В. В. Филиппова</p>
+                    <p class="description">Вышел новый указ...</p>
+                </article>
+                <article class="news__article">
+                    <p class="title">Гимназия теперь будет в честь В. В. Филиппова</p>
+                    <p class="description">Вышел новый указ...</p>
+                </article>
+                <article class="news__article">
+                    <p class="title">Гимназия теперь будет в честь В. В. Филиппова</p>
+                    <p class="description">Вышел новый указ...</p>
+                </article>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mix" id="mix">
+    <div class="mix__container">
+        <div class="schedule">
+            <p class="mix__title title" style="--size: 30px">Расписание на четверг</p>
+            <div class="schedule__content">
+                <div class="hints">
+                    <div class="hint"><div class="second square"></div><span>- средний балл ниже 3.5</span></div>
+                </div>
+                <table>
+                    <tr>
+                        <th class="lesson-number">1</th>
+                        <th class="lesson-name second"><a href="javascript:void">Якутская литература</a></th>
+                    </tr>
+                    <tr>
+                        <th class="lesson-number">2</th>
+                        <th class="lesson-name">Алгебра</th>
+                    </tr>
+                    <tr>
+                        <th class="lesson-number">3</th>
+                        <th class="lesson-name">Русский язык</th>
+                    </tr>
+                    <tr>
+                        <th class="lesson-number">4</th>
+                        <th class="lesson-name second">Русская литература</th>
+                    </tr>
+                    <tr>
+                        <th class="lesson-number">5</th>
+                        <th class="lesson-name">Геометрия</th>
+                    </tr>
+                    <tr>
+                        <th class="lesson-number">6</th>
+                        <th class="lesson-name">Информатика</th>
+                    </tr>
+                    <tr>
+                        <th class="lesson-number">7</th>
+                        <th class="lesson-name">Изо</th>
+                    </tr>
+                    <tr>
+                        <th class="lesson-number">8</th>
+                        <th class="lesson-name">Физкультура</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="calendar">
+            <p class="mix__title title" style="--size: 30px">Мероприятия на март</p>
+            <div class="calendar__content">
+                <div class="cell__list">
+                    {% for i in range31 %}
+                    <div class="cell {% if i == 5 %}second{% endif %}">{{ i }}</div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="account">
+    <div class="account__container">
+        <div class="account__info">
+            <div class="account__visual">
+                <div class="image-cropper">
+                    <img src="{% static 'photo.jpeg' %}" alt="Фото" class="account__photo">
+                </div>
+            </div>
+            
+            <div class="account__meta">
+                <div class="account__name">Антонов Александр Дьулустанович</div>
+                <div class="account__birthday">01.12.2009</div>
+            </div>
+
+            <div class="account__marks">
+                
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    const lesson = {
+        1: {"name": "Русский язык", "teacher": "Л.Е.Семеновна", "mark": "4.6 (5)"},
+        2: {"name": "Русская литература", "teacher": "Л.Е.Семеновна", "mark": "3.4 (3)"},
+        3: {"name": "Якутская литература", "teacher": "Мария Ивановна", "mark": "4.6 (5)"},
+        4: {"name": "Алгебра", "teacher": "К.С.Сергеевна", "mark": "3.9 (4)"},
+        5: {"name": "Геометрия", "teacher": "К.С. Сергеевна", "mark": "4.6 (5)"},
+        6: {"name": "Физкультура", "teacher": "Айсен Альбертович", "mark": "5 (5)"},
+        7: {"name": "Изо", "teacher": "Иван Иванович", "mark": "5 (5)"},
+        8: {"name": "Информатика", "teacher": "К. Ф. Любомировна", "mark": "5 (5)"}
+    }
+
+    function ShowLessonData(lesson_id) {
+
+    }
+</script>
+{% endblock %}

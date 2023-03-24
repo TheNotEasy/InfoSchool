@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> -->
+
+    <link rel="stylesheet" href="{% static 'colors.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'header.css' %}">
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+    <link rel="stylesheet" href="{% static 'form.css' %}">
+    <link rel="stylesheet" href="{% static 'intro.css' %}">
+    <link rel="stylesheet" href="{% static 'news.css' %}">
+    <link rel="stylesheet" href="{% static 'nav.css' %}">
+    <link rel="stylesheet" href="{% static 'mix.css' %}">
+    <link rel="stylesheet" href="{% static 'account.css' %}">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__icon" iconname="InfoSchool"></div>
+            <div class="header__menu">
+                {% if not index %}
+                <a class="header__link" href="/user/login">Войти</a>
+                <a class="header__link" href="/user/reg">Зарегестрироваться</a>
+                {% else %}
+                <select name="" id="fast-nav" class="nav">
+                    <option value="empty" hidden selected>Быстрая навигация</option>
+                    <option value="#news">Новости</option>
+                    <option value="#mix">Расписание</option>
+                </select>
+                <script>
+                    const nav = document.getElementById('fast-nav');
+
+                    nav.addEventListener("change", () => {
+                        document.location = nav.value;
+                        nav.value = "empty";
+                    })
+                </script>
+                {% endif %}
+            </div>
+        </header>
+        <main class="main">
+            {% block content %}{% endblock %}
+        </main>
+        <footer class="footer">
+            <div class="footer__container">
+                <div class="footer__list">
+                    <p>Поддержка</p>
+                    <p>Условие пользования</p>
+                    <p>Связаться с нами</p>
+                    <p>Сотрудничество и реклама</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+</body>
+</html>

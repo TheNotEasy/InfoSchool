@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="login">
+    <div class="login__container">
+        <form action="" method="post" class="students__form">
+            <p style="margin-bottom: 10px;">Ученики</p>
+            <div class="login-form__flow students">
+                <table class="students__table" id="students">
+                    <tr id="model">
+                        <td class="students__cell">ФИО (через пробел)</td>
+                        <td class="students__cell">Класс</td>
+                        <td class="students__cell">Код</td>
+                    </tr>
+                </table>
+                <a href="javascript:addUser('students', ['name', 'grade'])" class="students__add">Добавить ученика +</a>
+            </div>
+            <p style="margin-bottom: 10px;">Учителя</p>
+            <div class="login-form__flow">
+                <table class="students__table" id="teachers">
+                    <tr>
+                        <td class="students__cell">ФИО (через пробел)</td>
+                        <td class="students__cell">Предмет</td>
+                        <td class="students__cell">Код</td>
+                    </tr>
+                </table>
+                <a href="javascript:addUser('teachers', ['name', 'subject'])" class="students__add">Добавить учителя +</a>
+            </div>
+            <p style="margin-bottom: 10px;">Родители</p>
+            <div class="login-form__flow">
+                <table class="students__table" id="parents">
+                    <tr>
+                        <td class="students__cell">ФИО (через пробел)</td>
+                        <td class="students__cell">Код ученика</td>
+                        <td class="students__cell">Код</td>
+                    </tr>
+                </table>
+                <a href="javascript:addUser('parents', ['name', 'student'])" class="students__add">Добавить родителя +</a>
+            </div>
+            {% csrf_token %}
+            <input type="submit" value="Отправить">
+        </form>
+    </div>
+</div>
+<script>
+    async function addUser(id, fields) {
+        const table = document.getElementById(id)
+        const tr_model = document.createElement('tr');
+        for (const key of fields) {
+            let td = document.createElement('td')
+            td.classList.add("students__cell")
+            let input = document.createElement('input')
+            input.type = "text"
+            input.name = id + key
+            td.append(input)
+            tr_model.append(td)
+        }
+        let td = document.createElement('td')
+        td.classList.add("students__cell")
+        let input = document.createElement('input')
+        input.type = "text"
+        input.name = id + 'code'
+        input.value = await getCode();
+        input.setAttribute('readonly', 'readonly')
+        input.classList.add('long-input')
+        td.append(input)
+        tr_model.append(td)
+        table.append(tr_model)
+    }
+
+    async function getCode() {
+        let id = await fetch('/user/get-id');
+        let text = await id.text();
+        return text
+    }
+</script>
+{% endblock %}

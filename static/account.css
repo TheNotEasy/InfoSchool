@@ -1,0 +1,40 @@
+.account {
+    margin-top: 100px;
+}
+
+.account__container {
+    background-color: var(--news-bg-color);
+    height: 500px;
+    border-radius: 20px;
+    border-top: var(--third-color) solid 5px;
+    padding: 50px;
+
+    justify-content: center;
+}
+
+.image-cropper {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+}  
+
+.account__photo {
+    height: 100px;
+    width: 100px;
+}
+
+.account__info {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+
+    height: 100px;
+    gap: 20px;
+}
+
+.account__birthday {
+    text-align: end;
+}

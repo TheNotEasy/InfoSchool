@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="login">
+    <div class="login__container">
+        <p style="margin-bottom: 10px;">{{ title }}</p>
+        <form action="" method="post" class="login-form__flow form">
+            {{ form }}
+            <input type="submit" value="Отправить">
+            {% csrf_token %}
+        </form>
+    </div>
+</div>
+{% endblock %}

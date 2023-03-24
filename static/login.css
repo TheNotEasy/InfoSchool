@@ -1,0 +1,73 @@
+.login-form__flow {
+    display: flex;
+
+    width: calc(100% - 60px);
+    max-width: 500px;
+
+    background-color: var(--flow-color);
+
+    border-radius: 20px;
+
+    flex-direction: column;
+    padding: 30px;
+
+    margin: auto;
+
+    border-top: var(--third-color) solid 5px;
+}
+
+.login {
+    margin-top: 30px;
+}
+
+.login__container {
+    gap: 30px;
+
+    flex-direction: column;
+}
+
+.login__container>p, .login__container>form>p {
+    margin: auto;
+    font-size: 30px;
+}
+
+.students {
+    margin-top: 50px;
+}
+
+.students__cell {
+    border: var(--news-bg-color) solid 1px;
+}
+
+.students__add {
+    margin: 0 auto;
+    width: fit-content;
+    color: white;
+
+    margin-top: 20px;
+}
+
+.students__cell {
+    padding: 10px;
+    background-color: var(--main-color);
+}
+
+.students__cell>input {
+    width: 100%;
+}
+
+.students__cell>input[disabled] {
+    color: white;
+}
+
+.students__form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.students {
+    width: 600px;
+    min-width: 300px;
+}

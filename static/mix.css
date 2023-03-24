@@ -1,0 +1,106 @@
+.mix {
+    width: 100%;
+    margin-top: 100px;
+}
+
+.mix__container {
+    flex-direction: row;
+    justify-content: space-around;
+
+    gap: 50px;
+}
+
+.schedule, .calendar {
+    display: flex;
+    aspect-ratio: 1/0.8;
+    width: 100%;
+
+    background-color: var(--news-bg-color);
+
+    border-radius: 20px;
+
+    flex-direction: column;
+    padding: 30px;
+
+    justify-content: center;
+
+    gap: 50px;
+}
+
+.schedule__content, .calendar__content {
+    flex: 1 1 auto;
+}
+
+th {
+    border: var(--flow-color) solid 2px;
+    padding: 10px;
+}
+
+.lesson-number {
+    width: 30px;
+}
+
+.lesson-name {
+    width: 100%;
+}
+
+.warning {
+    color: var(--third-color);
+}
+
+.square {
+    width: 20px;
+    aspect-ratio: 1/1;
+}
+
+.third {
+    background-color: var(--third-color);
+}
+
+.second {
+    background-color: var(--second-color);
+    color: black;
+}
+
+.hints {
+    display: flex;
+    justify-content: center;
+}
+
+.hint {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.schedule__content {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.cell {
+    display: flex;
+
+    padding: 20px;
+    border: var(--flow-color) solid 2px;
+
+    width: 60px;
+    height: 60px;
+
+    justify-content: center;
+    align-items: center;
+
+    cursor: default;
+}
+
+.cell__list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.cell.second {
+    cursor: pointer;
+}

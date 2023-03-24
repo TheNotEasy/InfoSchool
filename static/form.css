@@ -1,0 +1,47 @@
+form {
+    display: flex;
+    gap: 20px;
+
+    flex-direction: column;
+}
+
+form>input, form>select {
+    height: 40px;
+    background-color: var(--main-color);
+    border: var(--flow-color) solid 1px;
+
+    border-radius: 10px;
+    transition-duration: 0.2s;
+    padding: 10px;
+    color: white;
+}
+
+form>select {
+    height: fit-content;
+    text-align: center;
+}
+
+form>select::-webkit-scrollbar {
+    display: none;
+}
+
+form>input:hover {
+    filter: brightness(120%);
+}
+
+form>input[type="submit"] {
+    border: none;
+    background-color: var(--second-color);
+}
+
+.helptext {
+    display: none;
+}
+
+br {
+    display: none;
+}
+
+.errorlist {
+    color: var(--third-color);
+}
